@@ -1,0 +1,109 @@
+\documentclass[10pt,a5paper,twoside]{book}
+\usepackage{lmodern}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[inner=1.5cm,outer=2cm,top=2cm,bottom=2.5cm]{geometry}
+%\usepackage{graphicx}
+%\usepackage{subfigure}
+%\usepackage{amsmath}
+%\usepackage{amsfonts}
+%\usepackage{multicol}
+%\usepackage{euscript}
+%\usepackage{enumerate}
+%\usepackage{wrapfig}
+%\usepackage[usenames]{color}
+\usepackage[none]{hyphenat}
+\usepackage{romannum}
+\usepackage{etoolbox}
+\usepackage{fancyhdr}
+
+\nofiles
+
+\title{Manifiesto del Partido Comunista}
+\author{Karl Marx y Friedrich Engels}				
+\date{1848}
+
+\newcommand{\org}[1] {{\itshape #1}}
+\newcommand{\ed}[1] {{\itshape #1}}
+\newcommand{\ob}[1] {{\itshape #1}}
+\newcommand{\qline}[2][] {{\itshape #1#2#1}}
+
+\def\changemargin#1#2{\list{}{\rightmargin#2\leftmargin#1}\item[]}
+\let\endchangemargin=\endlist 
+
+\newcommand{\qpar}[1] {{
+	\begin{changemargin}{1cm}{0cm}
+	\itshape #1
+	\end{changemargin}
+}}
+
+\newcommand{\fnote}[1] {{\footnote{#1}}}
+
+\newcommand{\prebook}[1] {{
+	\maketitle
+	\thispagestyle{empty}
+	\cleardoublepage
+	\pagenumbering{roman}
+	#1
+}}
+
+\newcommand{\preface}[4][] {{
+	\subsection*{#1}
+	#4
+	\vspace*{5mm}
+	\begin{flushright}
+		#2 
+		\\ \vspace*{2mm}
+		#3
+	\end{flushright}
+	\clearpage
+}}
+
+\newcommand{\book}[2][] {{
+	\pagenumbering{arabic}
+	\vspace*{1cm}
+	\begin{center}
+		\section*{#1}
+	\end{center}
+	\vspace*{1cm}
+	#2
+	\clearpage
+}}
+
+\newcommand{\chap}[3][-1] {{
+	\ifnum \numexpr #1 \relax < 0 {
+		\vspace*{0.5cm} \subsection*{#2} #3
+	} \else {
+		\vspace*{0.5cm} \subsection*{\Romannum{#1}. #2} #3
+	} \fi
+}}
+
+\newcommand{\subchap}[3][-1] {{
+	\ifnum \numexpr #1 \relax < 0 {
+		\vspace*{0.25cm} \subsubsection*{#2} #3
+	} \else {
+		\vspace*{0.25cm} \subsubsection*{#1. #2} #3
+	} \fi
+}}
+
+%\renewcommand{\labelitemi}{$\circ$}
+%\renewcommand{\labelitemii}{$\cdot$}
+
+\setlength{\parskip}{2mm}
+\setlength{\columnsep}{7mm}
+
+\pagestyle{fancy}
+\fancyhead{} % clear all header fields
+\fancyhead[RO,LE]{\thepage}
+\fancyhead[LO]{Manifiesto del Partido Comunista}
+\fancyhead[RE]{Karl Marx y Friedrich Engels}
+\fancyfoot{} % clear all footer fields
+%\fancyfoot[LE,RO]{\thepage}
+%\fancyfoot[LO,CE]{From: K. Grant}
+%\fancyfoot[CO,RE]{To: Dean A. Smith}
+\renewcommand{\headrulewidth}{0.4pt} % 0.4pt
+\renewcommand{\footrulewidth}{0pt}
+
+\begin{document}
+
+\sloppy
